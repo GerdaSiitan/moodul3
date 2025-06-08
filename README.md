@@ -65,7 +65,7 @@ Täida väljad:
 Salvesta – toode ilmub poe lehele automaatselt
 
 ## 📁 Failistruktuur:
------
+
 Vaated: resources/views/
 
 Laetud pildid: storage/app/public/
