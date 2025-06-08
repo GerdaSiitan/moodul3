@@ -39,7 +39,9 @@ class ProductCrudController extends CrudController
      */
     protected function setupListOperation()
     {
-        CRUD::setFromDb(); // set columns from db columns.
+        CRUD::column('id');
+        CRUD::column('name');
+        CRUD::column('price'); // set columns from db columns.
 
         /**
          * Columns can be defined using the fluent syntax:
@@ -56,7 +58,23 @@ class ProductCrudController extends CrudController
     protected function setupCreateOperation()
     {
         CRUD::setValidation(ProductRequest::class);
-        CRUD::setFromDb(); // set fields from db columns.
+         CRUD::field('name');
+        CRUD::field('price')->type('number')->attributes(['step' => 'any'])->prefix('€');
+        CRUD::field('description')->type('text');
+        CRUD::field('size')->type('select_from_array')->options([
+            's' => 'S',
+            'm' => 'M',
+            'l' => 'L',
+            'xl' => 'XL'
+        ]);
+
+        CRUD::field('color')->type('select_from_array')->options([
+            'black' => 'Must',
+            'white' => 'Valge',
+            'orange' => 'Oraanž'
+        ]);
+        CRUD::field('image')->type('upload_multiple')->withFiles(true);
+         // set fields from db columns.
 
         /**
          * Fields can be defined using the fluent syntax:
