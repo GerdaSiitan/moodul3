@@ -1,4 +1,4 @@
-Rawa-Tuulik Instalitatsioon
+## Rawa-Tuulik Instalitatsioon
 
 Laravel + Backpack + Blade veebiprojekt.  
 Tehtud Visual Studio Code'is ja jooksutatud Git Bashis. Adminpaneel töötab Backpacki kaudu ja lehed on tehtud Blade'iga. Andmebaasi pole kasutusel – kogu sisu liigub läbi Laravel + Blade + Backpacki.
