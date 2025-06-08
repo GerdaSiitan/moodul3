@@ -20,13 +20,13 @@
     <img id="nav-logo" src="/RAWA-TUULIK-LOGO.svg" class="md:h-40 h-32 transition-all duration-300 mx-auto lg:mx-0">
 
     <ul class="hidden lg:flex space-x-9 font-medium items-center text-[16px]" id="nav-links">
-      <li><a href="/">AVALEHT</a></li>
-      <li><a href="/merch.html">E-POOD</a></li>
-      <li><a href="/contact.html">KONTAKT</a></li>
+      <li><a href="{{route('home')}}">AVALEHT</a></li>
+      <li><a href="{{route('merch')}}">E-POOD</a></li>
+      <li><a href="{{route('contact')}}">KONTAKT</a></li>
     </ul>
 
     <div class="hidden lg:flex items-center space-x-4" id="nav-buttons">
-      <a href="/annetus.html"
+      <a href="{{route('annetus')}}"
          class="border-2 border-secondary text-secondary rounded-full px-6 py-2 hover:bg-orange-600 hover:border-orange-600 hover:text-white transition text-sm font-semibold"
          id="donate-btn">
         OLE ABIKS!
@@ -44,10 +44,10 @@
       close
     </span>
   </button>
-  <a href="/" class="font-bold">AVALEHT</a>
-  <a href="/merch.html" class="font-bold">E-POOD</a>
-  <a href="/contact.html" class="font-bold">KONTAKT</a>
-  <a href="/annetus.html" class="font-bold">OLE ABIKS!</a>
+  <a href="{{route('home')}}" class="font-bold">AVALEHT</a>
+  <a href="{{route('merch')}}" class="font-bold">E-POOD</a>
+  <a href="{{route('contact')}}" class="font-bold">KONTAKT</a>
+  <a href="{{route('annetus')}}" class="font-bold">OLE ABIKS!</a>
 </div>
 
 <script>
