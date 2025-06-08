@@ -12,6 +12,9 @@ class Product extends Model
     /** @use HasFactory<\Database\Factories\ProductFactory> */
     use HasFactory;
 
-    protected $fillable = ['name', 'price', 'description', 'color', 'size', 'image'];
+    protected $fillable = ['name', 'price', 'description', 'size', 'color', 'image'];
 
+    protected $casts = [
+        'image' => 'array'
+    ];
 }

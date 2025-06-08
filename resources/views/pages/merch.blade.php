@@ -150,52 +150,28 @@
 
 
 {{--tooted--}}
-<section class="md:h-[1500px] h-[1650px] ">
+<section class="md:h-full h-[1650px] ">
 
 {{--rida 1--}}
-      <a href="/merchdetail.html">
-      <div class="flex md:gap-[20px] gap-[100px] justify-center flex-wrap items-center  md:mt-[20px] md:mb-[10px]">
+  <div class="flex md:gap-[100px] md:gap-x-[20px] gap-[100px] justify-center flex-wrap items-center  md:mt-[20px] md:mb-[10px] rid-cols-1 md:grid-cols-3">
+@foreach($products as $product)
+      <a href="{{route('merchdetail', ['product' => $product])}}">
      <div class="relative md:h-[390px] h-[300px] md:w-[430px] w-[345px] bg-gray-600 rounded-md">
-      <img src="/pusa.jpg" class="h-full w-full object-cover rounded-md">
+      <img src="{{Storage::disk('public')->url($product->image[0])}}" class="h-full w-full object-cover rounded-md">
       <div class="px-4 py-3 text-sm text-gray-800">
     <div class="flex justify-between items-start">
       <div class="items-center">
-        <div class="font-semibold text-[20px] text-secondary">Rava Tuuliku Pusa</div>
+        <div class="font-semibold text-[20px] text-secondary">{{$product->name}}</div>
         <div class="text-[16px]">Käsitöö</div>
       </div>
-      <div class="text-[24px] md:mt-[5px] font-semibold text-secondary">19,90 €</div>
+      <div class="text-[24px] md:mt-[5px] font-semibold text-secondary">{{ $product->price }}€</div>
     </div>
   </div>
     </div>
   </a>
-    
-
-   <div class="relative md:h-[390px] h-[306px] md:w-[430px] w-[345px] bg-gray-600 rounded-md">
-    <img src="/magnet.jpg" class="h-full w-full object-cover rounded-md">
-          <div class="px-4 py-3 text-sm text-gray-800">
-    <div class="flex justify-between items-start">
-      <div class="items-center">
-        <div class="font-semibold text-[20px] text-secondary">Rava Tuuliku Magnet</div>
-        <div class="text-[16px]">Magnetid</div>
-      </div>
-      <div class="text-[24px] md:mt-[5px] font-semibold text-secondary">9,50 €</div>
-    </div>
+ @endforeach
   </div>
-    </div>
 
-
-       <div class="relative md:h-[390px] h-[306px] md:w-[430px] w-[345px] bg-gray-600 rounded-md">
-    <img src="/kott.jpg" class="h-full w-full object-cover rounded-md">
-          <div class="px-4 py-3 text-sm text-gray-800">
-    <div class="flex justify-between items-start">
-      <div class="items-center">
-        <div class="font-semibold text-[20px] text-secondary">Rava Tuuliku Kangaskott</div>
-        <div class="text-[16px]">Käsitöö</div>
-      </div>
-      <div class="text-[24px] md:mt-[5px] font-semibold text-secondary">16,90 €</div>
-    </div>
-  </div>
-    </div>
 
 {{--rida 2--}}
 

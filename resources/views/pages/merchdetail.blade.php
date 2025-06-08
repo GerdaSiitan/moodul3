@@ -107,22 +107,19 @@
 </script>
 
 {{--toote page--}}
-<section class=" md:mt-[30px] md:pt-[-90px] pt-[100px]  md:h-[900px] h-[1000px]">
+<section class=" md:mt-[30px] md:pt-[-300px] pt-[100px]  md:h-[1000px] h-[1000px]">
   <div class="flex flex-col md:flex-row md:items-start items-center">
     <div class="relative md:h-[538px] h-[265px] md:w-[685px] w-[335px] bg-gray-600 rounded-md md:mt-[165px] md:ml-[320px] hidden md:block">
-    <img src="/pusa.jpg" class="h-full w-full object-cover rounded-md">
+    <img src="{{ Storage::disk('public')->url($product->image[0]) }}" alt="img" class="h-full w-full object-cover rounded-md">
     </div>
 
      <div class="mt-8 md:mt-[165px] md:ml-[40px] max-w-[500px] px-4 md:px-0">
 
     {{--title--}}
     <p class="text-[16px] text-gray-600">Käsitöö</p>
-      <h1 class="text-[32px] md:text-[48px] font-extrabold text-secondary mt-1">Rava Tuuliku Pusa</h1>
+      <h1 class="text-[32px] md:text-[48px] font-extrabold text-secondary mt-1 leading-[1] md:leading-[1]">{{ $product->name }}</h1>
       <p class="text-[16px] text-gray-700 mt-2">
-        Stiilne ja mugav T-särk. Valmistatud pehmest <br class="hidden md:block">
-        puuvillast ning sobib ideaalselt nii kingituseks kui <br class="hidden md:block">
-        igapäevaseks kandmiseks. Kujundus on loodud <br class="hidden md:block">
-        kohapeal – lihtne, ajatu ja uhkelt eestimaine.
+        {{ $product->description }}
       </p>
 
           <div class="relative md:h-[538px] h-[265px] md:w-[685px] w-[335px] bg-gray-600 rounded-md md:mt-[165px] md:ml-[320px] block md:hidden">
@@ -133,7 +130,7 @@
     {{--värvid esuurus etc--}}
      <div class="flex flex-col md:flex-row justify-between gap-4 mt-6">
         <div>
-          <p class="text-[16px] mb-1">Toote värv: <span class="font-medium">Must</span></p>
+          <p class="text-[16px] mb-1">Toote värv: <span class="font-medium"> {{ $product->color }}</span></p>
           <div class="flex space-x-2">
             <span class="w-[40px] h-[40px] md:w-[55px] md:h-[55px] rounded-full border-2 hover:border-secondary bg-black"></span>
             <span class="w-[40px] h-[40px] md:w-[55px] md:h-[55px] rounded-full border-2 hover:border-secondary bg-gray-300"></span>
@@ -142,7 +139,7 @@
         </div>
 
        <div>
-          <p class="text-[16px] mb-1">Toote suurus: <span class="font-medium">S</span></p>
+          <p class="text-[16px] mb-1">Toote suurus: <span class="font-medium">{{$product->size}}</span></p>
           <div class="flex space-x-2">
             <button class="w-[40px] h-[40px] md:w-[55px] md:h-[55px] rounded-full border-2 hover:border-secondary text-[18px] md:text-[24px] font-medium">S</button>
             <button class="w-[40px] h-[40px] md:w-[55px] md:h-[55px] rounded-full border-2 hover:border-secondary text-[18px] md:text-[24px] font-medium">M</button>
@@ -155,7 +152,7 @@
     {{--hind--}}
      <div class="mt-6">
         <p class="text-[16px] font-regular">Hind</p>
-        <p class="text-[32px] md:text-[40px] font-bold text-secondary -mt-1">19,90 €</p>
+        <p class="text-[32px] md:text-[40px] font-bold text-secondary -mt-1"> {{ $product->price }}€</p>
       </div>
 
 
@@ -172,11 +169,11 @@
   {{--alumised pics--}}
  <div class="flex gap-2 justify-center flex-wrap items-center md:mt-[1px] md:ml-[-1050px]">
     <div class="relative h-[92px] w-[104px] bg-gray-600 rounded-md  hidden md:block ">
-    <img src="/pusa1.jpg" class="h-full w-full object-cover rounded-md">
+    <img src="{{ Storage::disk('public')->url($product->image[0]) }}" class="h-full w-full object-cover rounded-md">
     </div>
 
     <div class="relative h-[92px] w-[104px] bg-gray-600 rounded-md hidden md:block ">
-    <img src="/pusa2.jpg" class="h-full w-full object-cover rounded-md">
+    <img src="{{ Storage::disk('public')->url($product->image[0]) }}" class="h-full w-full object-cover rounded-md">
     </div>
   </div>
 

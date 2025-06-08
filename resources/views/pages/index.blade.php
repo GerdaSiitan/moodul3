@@ -255,21 +255,17 @@
 
 
     {{--meened boksid--}}
-    <div class="flex gap-6 justify-center flex-wrap md:ml-[75px] md:mt-[50px] mt-[40px] ">
-     <div class="relative md:h-[390px] h-[306px] md:w-[430px] w-[345px] bg-gray-600 rounded-md">
-      <img src="/pusa.jpg" class="h-full w-full object-cover rounded-md">
-    </div>
+<div class="flex gap-6 justify-center flex-wrap md:ml-[75px] md:mt-[50px] mt-[40px]">
+    @foreach($products as $product)
+        <a href="{{ route('merchdetail', $product->id) }}">
+            <div class="relative md:h-[390px] h-[306px] md:w-[430px] w-[345px] bg-gray-600 rounded-md">
+                <img src="{{ Storage::disk('public')->url($product->image[0]) }}" class="h-full w-full object-cover rounded-md">
+            </div>
+        </a>
+    @endforeach
+</div>
 
-   <div class="relative md:h-[390px] h-[306px] md:w-[430px] w-[345px] bg-gray-600 rounded-md">
-    <img src="/magnet.jpg" class="h-full w-full object-cover rounded-md">
-    </div>
-
-    <div class="relative md:h-[390px] h-[306px] md:w-[430px] w-[345px] bg-gray-600 rounded-md">
-       <img src="/kott.jpg" class="h-full w-full object-cover rounded-md">
-    </div>
-  </div>
-
-  <a href="/merch.html">
+  <a href="{{route('merch')}}">
    <button class="flex items-center gap-2 px-[25px] py-[12px] border-2 border-secondary text-secondary uppercase font-semibold 
       rounded-full transition hover:bg-orange-600 hover:border-orange-600 hover:text-white  md:mt-[50px] mt-[20px] md:ml-[890px] ml-[95px]">
         VAATA JUURDE
