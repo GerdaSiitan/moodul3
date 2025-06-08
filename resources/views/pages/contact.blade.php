@@ -145,26 +145,37 @@
   <div class="w-full md:w-[500px] space-y-6 md:mt-[-100px] mt-[20px] md:mr-[300px] mr-[-100px] ml-[-2px] mb-[5px] md:mb-[0px]">
     <h2 class="md:text-[32px] text-[24px] font-primary  text-secondary uppercase">Võta ühendust</h2>
 
-    <form class="space-y-4">
-      <div>
+<form method="POST" action="{{ route('contact.send') }}" class="space-y-4">
+    @csrf
+    <div>
         <label for="name" class="block text-sm font-medium text-gray-700">Nimi</label>
-        <input type="text" id="name" class="mt-1 block w-full border border-gray-300 rounded-md bg-[#FFFCF5] px-3 py-2 focus:outline-none focus:ring-2 focus:ring-secondary" />
-      </div>
+        <input type="text" id="name" name="name" required
+            class="mt-1 block w-full border border-gray-300 rounded-md bg-[#FFFCF5] px-3 py-2 focus:outline-none focus:ring-2 focus:ring-secondary" />
+    </div>
 
-      <div>
+    <div>
         <label for="email" class="block text-sm font-medium text-gray-700">E-mail</label>
-        <input type="email" id="email" class="mt-1 block w-full border border-gray-300 rounded-md bg-[#FFFCF5] px-3 py-2 focus:outline-none focus:ring-2 focus:ring-secondary" />
-      </div>
+        <input type="email" id="email" name="email" required
+            class="mt-1 block w-full border border-gray-300 rounded-md bg-[#FFFCF5] px-3 py-2 focus:outline-none focus:ring-2 focus:ring-secondary" />
+    </div>
 
-      <div>
+    <div>
         <label for="message" class="block text-sm font-medium text-gray-700">Küsimus</label>
-        <textarea id="message" rows="4" class="mt-1 block w-full border border-gray-300 rounded-md bg-[#FFFCF5] px-3 py-2 focus:outline-none focus:ring-2 focus:ring-secondary"></textarea>
-      </div>
+        <textarea id="message" name="message" rows="4" required
+            class="mt-1 block w-full border border-gray-300 rounded-md bg-[#FFFCF5] px-3 py-2 focus:outline-none focus:ring-2 focus:ring-secondary"></textarea>
+    </div>
 
-      <button type="submit" class="uppercase w-full border-2 border-secondary text-secondary font-semibold py-2 rounded-full hover:bg-secondary hover:text-primary transition">
+    <button type="submit"
+        class="uppercase w-full border-2 border-secondary text-secondary font-semibold py-2 rounded-full hover:bg-secondary hover:text-primary transition">
         Saada
-      </button>
-    </form>
+    </button>
+</form>
+
+    @if(session('success'))
+    <div class="p-4 text-green-700 bg-green-100 border border-green-300 rounded">
+        {{ session('success') }}
+    </div>
+    @endif
   </div>
 </section>
 
